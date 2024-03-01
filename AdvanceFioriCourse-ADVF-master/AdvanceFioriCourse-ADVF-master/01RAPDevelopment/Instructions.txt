@@ -1,0 +1,49 @@
+*********Instruction's for RAP Development*********
+
+Step 1. Create 8 Database Tables Which are Mentioned in our DB Design and also Created Missing Data Element.
+
+1.1 Create Table zats_abook and Activate.
+1.2 Create Table zats_acarr and Activate.
+1.3 Create Table zats_aconn and Activate.
+1.4 Create Table zats_aflig and Activate.
+1.5 Create Table zats_astat and Activate.
+1.6 Create Table zats_atrav and Activate.
+1.7 Create Table zats_dbook and Activate.
+1.8 Create Table zats_dtrav and Activate.
+
+Step 2. Create CDS Views as per Design.
+
+2.1 Create Basic CDS ZATS_I_FE_CARR
+2.2 Create Basic CDS ZATS_I_FE_CONN
+2.3 Create Basic CDS ZATS_I_FE_FLIG
+2.4 Create Basic CDS ZATS_I_FE_STAT
+2.5 Create Basic CDS ZATS_I_FE_TRAVEL_ANALYTICS
+2.6 Create Basic CDS ZATS_I_FE_BOOKING_ANALYTICS
+2.7 Create Root CDS ZATS_I_FE_TRAVEL
+2.8 Create CDS ZATS_I_FE_BOOKING
+    (2.7 and 2.8 Please activate Together)
+2.9 Create CDS Entity ZATS_C_FE_BOOKING
+2.10 Create CDS Entity ZATS_C_FE_TRAVEL
+     (2.9 and 2.10 Please activate Together)
+2.11 Create CDS Entity ZATS_C_FE_BOOKING_ANALYTICS
+
+Step 3. Create ABAP Classes.
+
+3.1 Create Data Generator Class ZCL_ATS_DATA_GENERATOR for Generate Sample Data.
+3.2 Create ZBP_I_FE_BOOKING Class for behavior of ZATS_I_FE_TRAVEL.(Also Create Local Type ( Local Class))
+3.3 Create ZBP_I_FE_TRAVEL Class for behavior of ZATS_I_FE_TRAVEL.(Also Create Local Type ( Local Class))
+
+Step 4. Create Behavior Definitions.
+
+4.1 Create ZATS_C_FE_TRAVEL Behavior Definition for Showing Behavior.
+4.2 Create ZATS_I_FE_TRAVEL Behavior Definition for Showing Behavior.
+
+Step 5. Create Service Definitions.
+
+5.1 Create ZATS_FE_BOOKING_ANALYTICS Service Definition for Expose CDS Entities.
+5.2 Create ZATS_FE_TRAVEL Service Definition for Expose CDS Entites.
+
+Step 6 Create Service Binding on top of Service Definition.
+
+6.1 Create ZATS_UI_FE_TRAVEL Service Binding on top of ZATS_FE_TRAVEL Service Definition and Publish Service Binding.
+6.2 Create ZATS_UI_FE_BOOKING Service Binding on top of ZATS_FE_BOOKING_ANALYTICS Service Definition and Publish Service Binding.
